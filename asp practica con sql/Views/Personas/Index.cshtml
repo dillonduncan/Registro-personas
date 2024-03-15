@@ -1,0 +1,27 @@
+﻿@model List<TablaPersona>
+<h1>Personas</h1>
+<p>
+    <a asp-action="Create">Crear Persona</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Edad</th>
+            <th>Genero</th>
+        </tr>
+    </thead>
+    <tbody>
+       
+        @foreach (var personas in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(p=>personas.Id)</td>
+                <td>@Html.DisplayFor(p=>personas.NombrePersona)</td>
+                <td>@Html.DisplayFor(p=>personas.EdadPersona)</td>
+                <td>@Html.DisplayFor(p=>personas.IdGeneroNavigation.NombreGenero)</td>
+            </tr>
+        }
+    </tbody>
+</table>
